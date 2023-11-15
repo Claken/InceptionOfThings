@@ -1,0 +1,24 @@
+## tuto vagrant beginner tutorial video 2 24:40
+
+#version de vagrant
+vagrant -v ou vagrant --version
+#initialiser un projet avec vagrant
+#ceci crera un vagrantfile
+vagrant init
+# ceci crera un vagrantfile avec une image d'une machie virtuelle
+vagrant init ubuntu/focal64
+# ajouter une image d'une vm a vagrant
+vagrant box add ubuntu/focal64
+#lister les images virtuelles installer localement 
+vagrant box list
+
+##commande a l'interieur du vagrantfile
+# commande qui permet de choisir une image d'une machine virtuelle pres configurer comme commancement.
+config.vm.box = "ubuntu/focal64"
+
+#demarrer une ou des machines virtuelle
+vagrant up
+#se connecter en ssh a la machine
+vagrant ssh
+
+
