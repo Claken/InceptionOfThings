@@ -11,6 +11,16 @@ vagrant init ubuntu/focal64
 vagrant box add ubuntu/focal64
 #lister les images virtuelles installer localement 
 vagrant box list
+#permet de lister toute les commandes de vagrant.
+vagrant --help
+#checker si une machine est obsolete
+vagrant box list outdated
+#update une image virtuelle
+vagrant box update "nom de la machine"
+#enleve toutes les machines virtuelles qui sont obsolete
+vagrant box prune
+#supprimer une box
+vagrant box remove "nom d'une machine virtuelle"
 
 ##commande a l'interieur du vagrantfile
 # commande qui permet de choisir une image d'une machine virtuelle pres configurer comme commancement.
@@ -20,5 +30,27 @@ config.vm.box = "ubuntu/focal64"
 vagrant up
 #se connecter en ssh a la machine
 vagrant ssh
-
-
+#afficher la configuration ssh d'une machine virtuelle
+vagrant ssh-config
+#arreter de maniere propre une machine virtuelle
+vagrant halt "nom de la machine"
+#mettre la machine virtuelle en pause sans l'eteindre
+vagrant suspend "nom de la machine"
+#allumer une machine virtuelle qui a etait mis en pause
+vagrant resume "nom de la machine"
+#arreter et redemarrer la vm tout en appliquant les modifications specifier dans le vagrantfile
+vagrant reload
+#arreter et supprimer une vm
+vagrant destroy
+#afficher l'etat actuel des vm
+vagrant status
+#creer une nouvelle box vagrant a partir de l'etat actuel d'une machine virtuelle
+vagrant package --output "nom de la nouvelle box"
+#executer a nouveau le provisionnement sur une vm deja cree
+vagrant provisionnement
+#installer des plugins
+vagrant plugin install
+#afficher la liste des plugins
+vagrant plugin list
+#desinstaller un plugin
+vagrant plugin uninstall
