@@ -1,0 +1,1 @@
+{"dependencies":[["mixlib-shellout",["~> 2.1"]],["vbinfo",["= 0.0.2"]]],"checksum":"d68b6345200081a1fd5c3039f3522587799fd532a206d766860e7d4ab788881f","vagrant_version":"2.4.0"}

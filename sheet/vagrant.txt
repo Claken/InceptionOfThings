@@ -28,6 +28,8 @@ config.vm.box = "ubuntu/focal64"
 # commande pour definnir les provisions
 config.vm.provision "shell", inline:"echo Hello, World!"
 config.vm.provision "shell", path:"location.sh"
+# commande pour configurer un reseau priver entre hote et vm
+config.vm.network "private_network", ip: "192.168.33.10"
 # commande pour configurer une redirection de port
 config.vm.network "forwarded_port", guest:80, host:8080
 # commande pour configurer une redirection de port si hote est occupe
@@ -37,6 +39,14 @@ config.vm.network "forwarded_port", guest:80, host:8080, auto_correct:true
 config.vm.usable_port_range = (8000..9000)
 # commande pour configurer des dossiers synchronises entre la machine hote et virtuelle
 config.vm.synced_folder "chemin dossier hote", "chemin dossier virtuel"
+# commande qui permet de specifier le fournisseur de virtualistion de la vm
+config.vm.provider "virtualbox"
+# commande qui permet de specifier le fournisseur de virtualistion de la vm allouer ram et cpu
+config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = 2
+end
+
 
 #demarrer une ou des machines virtuelle
 vagrant up
@@ -68,8 +78,15 @@ vagrant plugin install
 vagrant plugin list
 #desinstaller un plugin
 vagrant plugin uninstall
+#detruire tous les plugin
+vagrant plugin expunge
 #faire un snapshot d'une vm
 vagrant snapshot save "name"
+#afficher l'etat global de toutes les machines virtuel
+vagrant global-status
+#verifier la validiter syntaxique du fichier vagrantfile
+vagrant validate
+
 
 ### def
 #provisioning a vm
@@ -96,7 +113,15 @@ c'est un outil qui permet de faire et configurer rapidement une vm dans un vagra
 # qu'est-ce que le port forwarding?
 - C'est ce qui permet de rediriger les requetes provenant de ports de la machine hote vers
 les ports de la machine virtuelle.
+# Qu'est ce qu'un private network?
+- C'est la creation d'un reseau privee entre la machine hote et la machine virtuelle
+- une addresse ip statique est cree ce qui facilite la communication directe entre l'hote et la vm
 # qu'est ce que le snapshot d'une vm?
 - C'est une copy complete de la VM et de son etat.
-
+#Vagrant.configure("2") do |config|
+-Vagrant.configure est une methode pour initialiser des vm dans un fichier Vagrantfile.
+-"2" represente la version utilisee dans le fichier.
+-do en ruby indique le debut d'un block
+-config est un parametre passer celui ci est un objet qui contient toutes les configurations des vm.
+-end definnit la fin du bloc. 
 
