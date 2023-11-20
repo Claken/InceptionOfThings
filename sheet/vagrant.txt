@@ -1,4 +1,4 @@
-## tuto vagrant beginner tutorial video 2 24:40
+## tuto vagrant beginner tutorial video 4
 
 #version de vagrant
 vagrant -v ou vagrant --version
@@ -25,6 +25,18 @@ vagrant box remove "nom d'une machine virtuelle"
 ##commande a l'interieur du vagrantfile
 # commande qui permet de choisir une image d'une machine virtuelle pres configurer comme commancement.
 config.vm.box = "ubuntu/focal64"
+# commande pour definnir les provisions
+config.vm.provision "shell", inline:"echo Hello, World!"
+config.vm.provision "shell", path:"location.sh"
+# commande pour configurer une redirection de port
+config.vm.network "forwarded_port", guest:80, host:8080
+# commande pour configurer une redirection de port si hote est occupe
+# vagrant choisit automatiquement entre le port 2200 et 2250.
+config.vm.network "forwarded_port", guest:80, host:8080, auto_correct:true
+# commande pour configurer l'ecart entre les ports
+config.vm.usable_port_range = (8000..9000)
+# commande pour configurer des dossiers synchronises entre la machine hote et virtuelle
+config.vm.synced_folder "chemin dossier hote", "chemin dossier virtuel"
 
 #demarrer une ou des machines virtuelle
 vagrant up
@@ -40,6 +52,8 @@ vagrant suspend "nom de la machine"
 vagrant resume "nom de la machine"
 #arreter et redemarrer la vm tout en appliquant les modifications specifier dans le vagrantfile
 vagrant reload
+#arreter et redemarrer la vm tout en ajoutant les modifications de script
+vagrant reload --provision
 #arreter et supprimer une vm
 vagrant destroy
 #afficher l'etat actuel des vm
@@ -54,3 +68,35 @@ vagrant plugin install
 vagrant plugin list
 #desinstaller un plugin
 vagrant plugin uninstall
+#faire un snapshot d'une vm
+vagrant snapshot save "name"
+
+### def
+#provisioning a vm
+c'est le processus d'installation et de configuration d'une vm avec les logiciels et ressources
+necessaire pour une tache ou application particuliaire.
+#comment approvisioner une vm
+- facon 1
+- dans un fichier vagrantfile
+- ajouter la commande config.vm.provision
+- choisir un provisionneur comme (Shell, Ansible, Puppet, Chef).
+- exemple (config.vm.provision "shell", inline <<-SHELL
+    # commandes
+    SHELL)
+- facon 2
+- creer un nouveau fichier et indiquer l'emplacement dans le vagrantfile.
+- creer un fichier provision.sh
+- exemple config.vm.provision: "shell", path:"location.sh" 
+#qu'est ce qu'un vagrantfile generator
+c'est un outil qui permet de faire et configurer rapidement une vm dans un vagrantfile
+#Combien de configuration reseau vagrant propose t'il et qu'elles sont elles?
+- port forwarding (redirection de port)
+- private network (reseau privee)
+- public network (reseau public)
+# qu'est-ce que le port forwarding?
+- C'est ce qui permet de rediriger les requetes provenant de ports de la machine hote vers
+les ports de la machine virtuelle.
+# qu'est ce que le snapshot d'une vm?
+- C'est une copy complete de la VM et de son etat.
+
+
