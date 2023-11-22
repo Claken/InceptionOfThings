@@ -1,4 +1,4 @@
-## tuto vagrant beginner tutorial video 4
+## tuto vagrant beginner tutorial video 10
 
 #version de vagrant
 vagrant -v ou vagrant --version
@@ -21,6 +21,8 @@ vagrant box update "nom de la machine"
 vagrant box prune
 #supprimer une box
 vagrant box remove "nom d'une machine virtuelle"
+#savoir la version de virtual box installer
+vboxmanage -v
 
 ##commande a l'interieur du vagrantfile
 # commande qui permet de choisir une image d'une machine virtuelle pres configurer comme commancement.
@@ -41,10 +43,11 @@ config.vm.usable_port_range = (8000..9000)
 config.vm.synced_folder "chemin dossier hote", "chemin dossier virtuel"
 # commande qui permet de specifier le fournisseur de virtualistion de la vm
 config.vm.provider "virtualbox"
-# commande qui permet de specifier le fournisseur de virtualistion de la vm allouer ram et cpu
+# commande qui permet de specifier le fournisseur de virtualistion de la vm allouer ram et cpu et un nom
 config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
     vb.cpus = 2
+    vb.name = "lala"
 end
 
 
@@ -66,12 +69,12 @@ vagrant reload
 vagrant reload --provision
 #arreter et supprimer une vm
 vagrant destroy
-#afficher l'etat actuel des vm
+#afficher l'etat actuel des vm dans le dossier
 vagrant status
 #creer une nouvelle box vagrant a partir de l'etat actuel d'une machine virtuelle
 vagrant package --output "nom de la nouvelle box"
 #executer a nouveau le provisionnement sur une vm deja cree
-vagrant provisionnement
+vagrant provision
 #installer des plugins
 vagrant plugin install
 #afficher la liste des plugins
@@ -84,6 +87,9 @@ vagrant plugin expunge
 vagrant snapshot save "name"
 #afficher l'etat global de toutes les machines virtuel
 vagrant global-status
+#afficher l'etat global de toutes les machines virtuel sans la liste des vm qui ne 
+#sont plus en cours d'execution ou dont les repertoires int ete supprimes.
+vagrant blobal-status --prune
 #verifier la validiter syntaxique du fichier vagrantfile
 vagrant validate
 
@@ -103,7 +109,7 @@ necessaire pour une tache ou application particuliaire.
 - facon 2
 - creer un nouveau fichier et indiquer l'emplacement dans le vagrantfile.
 - creer un fichier provision.sh
-- exemple config.vm.provision: "shell", path:"location.sh" 
+- exemple config.vm.provision "shell", path:"location.sh" 
 #qu'est ce qu'un vagrantfile generator
 c'est un outil qui permet de faire et configurer rapidement une vm dans un vagrantfile
 #Combien de configuration reseau vagrant propose t'il et qu'elles sont elles?
@@ -118,7 +124,7 @@ les ports de la machine virtuelle.
 - une addresse ip statique est cree ce qui facilite la communication directe entre l'hote et la vm
 # qu'est ce que le snapshot d'une vm?
 - C'est une copy complete de la VM et de son etat.
-#Vagrant.configure("2") do |config|
+#expliquer la commande Vagrant.configure("2") do |config|
 -Vagrant.configure est une methode pour initialiser des vm dans un fichier Vagrantfile.
 -"2" represente la version utilisee dans le fichier.
 -do en ruby indique le debut d'un block
