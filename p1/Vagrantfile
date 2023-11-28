@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+machines = [
+  {
+    :hostname => "rkhelifS",
+    :box => "ubuntu/focal64",
+    :cpu => 1,
+    :ram => "512",
+    :ip => "192.168.56.110",
+    :path => "controller.sh"
+  },
+  {
+    :hostname => "rkhelifSW",
+    :box => "ubuntu/focal64",
+    :cpu => 1,
+    :ram => "512",
+    :ip => "192.168.56.111",
+    :path => "agent.sh"
+  }
+]
+
+Vagrant.configure("2") do |config|
+  machines.each do |machine|
+    config.vm.define machine[:hostname] do |node|
+      node.vm.box = machine[:box]
+      node.vm.network "private_network", ip:machine[:ip]
+      config.vm.provision "shell", path:machine[:path]
+      node.vm.provider "virtualbox" do |vb|
+        vb.memory = machine[:ram]
+        vb.cpus = machine[:cpu]
+      end
+    end
+  end
+end

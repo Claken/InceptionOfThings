@@ -10,7 +10,7 @@ vagrant init ubuntu/focal64
 # ajouter une image d'une vm a vagrant
 vagrant box add ubuntu/focal64
 #lister les images virtuelles installer localement 
-vagrant box list
+vagrant box list  
 #permet de lister toute les commandes de vagrant.
 vagrant --help
 #checker si une machine est obsolete
@@ -48,6 +48,10 @@ config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
     vb.cpus = 2
     vb.name = "lala"
+end
+# définir une nouvelle machine virtuelle
+config.vm.define "nom de la machine" do |node|
+    ###
 end
 
 
@@ -89,7 +93,7 @@ vagrant snapshot save "name"
 vagrant global-status
 #afficher l'etat global de toutes les machines virtuel sans la liste des vm qui ne 
 #sont plus en cours d'execution ou dont les repertoires int ete supprimes.
-vagrant blobal-status --prune
+vagrant global-status --prune
 #verifier la validiter syntaxique du fichier vagrantfile
 vagrant validate
 
