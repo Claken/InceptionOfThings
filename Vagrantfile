@@ -23,9 +23,3 @@ Vagrant.configure("2") do |config|
     # This will be shown to the user and is useful for containing instructions such as how to access various components of the development environment.
     config.vm.provision "shell", inline: "echo Hello" # This causes "echo Hello" to be run within the guest machine when provisioners are run.
   end
-
-
-  
-  
-  
-end
