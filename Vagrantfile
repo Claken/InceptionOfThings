@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "sachouamS" do | sachou |
-    sachou.vm.hostname = "sachouamS" # nom de la machine virtuelle
+    sachou.vm.hostname = "sachouam" # nom de la machine virtuelle
     sachou.vm.box = "bento/centos-7.3" # pour utiliser une box centos 7.3
     sachou.vm.box_check_update = false # pour ne pas vérifier les mises à jour de la box
     sachou.vm.boot_timeout = 400 #  The time in seconds that Vagrant will wait for the machine to boot and be accessible. By default this is 300 seconds.
