@@ -21,4 +21,11 @@ kubectl wait --namespace ingress-nginx \
 
 echo -e "\e[32mIngress controller ready!\e[0m"
 
+kubectl cp /confs/index1.html $(kubectl get pods -o=jsonpath='{.items[0].metadata.name}' -l app=nginx1):/usr/share/nginx/html/index.html
+kubectl cp /confs/index3.html $(kubectl get pods -o=jsonpath='{.items[0].metadata.name}' -l app=nginx3):/usr/share/nginx/html/index.html
+for pod in $(kubectl get pods -l app=nginx2 -o jsonpath='{.items[*].metadata.name}')
+do
+    kubectl cp /confs/index2.html ${pod}:/usr/share/nginx/html/index.html
+done
+
 kubectl apply -f /confs/ingress.yaml
