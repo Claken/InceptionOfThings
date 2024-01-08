@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-argo-app
+  namespace: argocd
+spec:
+  project: default
+  # github repo and branch to use
+  source:
+    repoURL: https://github.com/Lap0u/cbeaurai-IoT_app.git
+    targetRevision: HEAD
+    path: dev
+  #linked to the k3s cluster
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  # automated sync when a change is detected in the remote repo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
