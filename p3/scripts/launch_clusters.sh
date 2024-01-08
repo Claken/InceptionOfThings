@@ -24,4 +24,7 @@ while [ $(kubectl get pod -n argocd | grep "0/1" | wc -l) -ne 0 ]; do
     sleep 5
 done
 
-kubectl port-forward -n argocd svc/argocd-server 8080:443
+kubectl port-forward -n argocd svc/argocd-server 8080:443 &
+
+#port forward to access the app from localhost:8888
+# sudo kubectl port-forward service/wil-playground 8888:8888 -n dev
