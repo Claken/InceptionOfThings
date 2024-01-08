@@ -9,7 +9,10 @@ Vagrant.configure("2") do |config|
       v.memory = 8192
       v.cpus = 1
       cbeauraiS.vm.network "private_network", ip: "192.168.56.110"
+      cbeauraiS.vm.network "forwarded_port", guest: 8080, host: 8080
+      
     end
     cbeauraiS.vm.provision "shell", path: "scripts/install_dependencies.sh"
+    cbeauraiS.vm.provision "shell", path: "scripts/launch_clusters.sh"
   end
 end

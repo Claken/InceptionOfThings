@@ -23,7 +23,3 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 #install k3d
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-
-k3d cluster create mycluster
-
-# kubectl get nodes
