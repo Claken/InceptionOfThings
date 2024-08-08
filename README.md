@@ -10,6 +10,12 @@ This project consists of setting up several environments under specific rules.
 
 # P1
 
+...
+
 # P2
 
+...
+
 # P3
+
+...
