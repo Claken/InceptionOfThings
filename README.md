@@ -16,6 +16,6 @@ This project consists of setting up several environments under specific rules.
 
 ...
 
-# P3 : K3s and three simple applications
+# P3 : K3d and Argo CD
 
 ...
