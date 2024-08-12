@@ -16,7 +16,7 @@ For this part, we had to set up 2 machines :
 
 # P2 : K3s and three simple applications
 
-...
+For this part, we had to set up only one machine with three applications.
 
 # P3 : K3d and Argo CD
 
