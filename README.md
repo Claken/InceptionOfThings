@@ -2,7 +2,7 @@
 
 # 🌀 InceptionOfThings
 
-This project consists of setting up several environments under specific rules.
+This group project consists of setting up several environments under specific rules.
 
 # 👩🏻‍🏫 WHAT THIS PROJECT BROUGHT ME
 - With this project, I saw some notions of kubernetes, in particular K3d and K3s.
@@ -10,7 +10,7 @@ This project consists of setting up several environments under specific rules.
 
 # P1 : K3s and Vagrant
 
-For this part, I had to set up 2 machines :
+For this part, we had to set up 2 machines :
 - the Server
 - the ServerWorker
 
