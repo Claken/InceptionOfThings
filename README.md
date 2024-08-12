@@ -8,14 +8,14 @@ This project consists of setting up several environments under specific rules.
 - With this project, I saw some notions of kubernetes, in particular K3d and K3s.
 - I learned how to use Vagrant to manage the lifecycle of virtual machines, and Vagrantfile to configure virtual machines.
 
-# P1
+# P1 : K3s and Vagrant
 
 ...
 
-# P2
+# P2 : K3s and three simple applications
 
 ...
 
-# P3
+# P3 : K3s and three simple applications
 
 ...
