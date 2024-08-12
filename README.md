@@ -10,7 +10,9 @@ This project consists of setting up several environments under specific rules.
 
 # P1 : K3s and Vagrant
 
-...
+For this part, I had to set up 2 machines :
+- 
+-
 
 # P2 : K3s and three simple applications
 
