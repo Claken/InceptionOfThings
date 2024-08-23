@@ -12,7 +12,7 @@ This post common core group project (from 42Paris) consists of configuring and m
 
 For this part, we had to set up 2 machines with Vagrant :
 - the Server
-- and the ServerWorker
+- and the ServerWorker <br/>
 We had to install K3s in both machines to have a Kubernetes cluster, and install kubectl to handle it.
 
 # P2 : K3s and three simple applications
