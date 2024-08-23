@@ -2,8 +2,8 @@
 
 # 🌀 InceptionOfThings
 
-This group project consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploy web applications and CI/CD pipelines. <br/>
-It is part of the post common-core cursus of 42Paris.
+IOT consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploy web applications and CI/CD pipelines. <br/>
+This group project is part of the 42 school **post** common core curriculum.
 
 # 👩🏻‍🏫 WHAT THIS PROJECT BROUGHT ME
 - With this project, I saw some notions of kubernetes, in particular K3d and K3s.
