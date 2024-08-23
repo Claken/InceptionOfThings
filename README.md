@@ -2,7 +2,7 @@
 
 # 🌀 InceptionOfThings
 
-This group project consists of setting up several environments under specific rules.
+This post common core group project (from @42Paris) consists of setting up several environments under specific rules.
 
 # 👩🏻‍🏫 WHAT THIS PROJECT BROUGHT ME
 - With this project, I saw some notions of kubernetes, in particular K3d and K3s.
