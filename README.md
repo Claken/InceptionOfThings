@@ -15,7 +15,7 @@ For this part, we had to set up 2 machines with Vagrant :
 - the Server
 - and the ServerWorker <br/>
 
-We had to install K3s in both machines to have a Kubernetes cluster, and install kubectl to handle it.
+We had to install `K3s` in both machines to have a Kubernetes cluster, and install the command-line tool `kubectl` to handle it.
 
 # P2 : K3s and three simple applications
 
