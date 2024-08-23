@@ -24,5 +24,5 @@ We used [NGINX](https://nginx.org/en/) for the three of them.
 
 # P3 : K3d and Argo CD
 
-For this part, we had to create a Kubernetes cluster with K3d and set up CI/CD pipelines with Argo CD. <br/>
+For this part, we had to create a Kubernetes cluster with `K3d` and set up CI/CD pipelines with `Argo CD`. <br/>
 This included configuring namespaces for Argo CD and automatically deploying applications from a GitHub repository.
