@@ -2,7 +2,7 @@
 
 # 🌀 InceptionOfThings
 
-IOT consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploying web applications and CI/CD pipelines. <br/>
+IOT consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploying web applications and CI/CD pipelines. <br/> <br/>
 This group project is part of the 42 school **post** common core curriculum.
 
 # 👩🏻‍🏫 WHAT THIS PROJECT BROUGHT ME
