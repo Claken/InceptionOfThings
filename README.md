@@ -1,5 +1,3 @@
-# !!! README IN PROGRESS !!! #
-
 # 🌀 InceptionOfThings
 
 IOT consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploying web applications and CI/CD pipelines. <br/> <br/>
@@ -17,11 +15,11 @@ For this part, we had to set up 2 machines with Vagrant :
 
 We had to install `K3s` in both machines to have a Kubernetes cluster, and install the command-line tool `kubectl` to handle it.
 
-### Prerequisites
+### 📦 Prerequisites
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-### Usage
+### 🚀 Usage
 ```bash
 cd p1
 vagrant up
@@ -39,11 +37,11 @@ vagrant destroy -f
 For this part, we had to set up only one machine with three web applications. <br/>
 We used [NGINX](https://nginx.org/en/) for the three of them.
 
-### Prerequisites
+### 📦 Prerequisites
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-### Usage
+### 🚀 Usage
 ```bash
 cd p2
 vagrant up
@@ -65,12 +63,12 @@ Then open in your browser:
 For this part, we had to create a Kubernetes cluster with `K3d` and set up CI/CD pipelines with `Argo CD`. <br/>
 This included configuring namespaces for Argo CD and automatically deploying applications from a GitHub repository.
 
-### Prerequisites
+### 📦 Prerequisites
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - At least 8 GB RAM available for the VM (as configured in `p3/Vagrantfile`)
 
-### Usage
+### 🚀 Usage
 ```bash
 cd p3
 vagrant up
