@@ -3,8 +3,8 @@
 IOT consists of configuring and managing lightweight Kubernetes clusters with K3s and K3d, as well as deploying web applications and CI/CD pipelines. <br/> <br/>
 This group project is part of the 42 school **post** common core curriculum.
 
-## 👩🏻‍🏫 What I gained from the project
-- With this project, I saw some notions of kubernetes, in particular K3d and K3s.
+## 👩🏻‍🏫 What I have gained from the project
+- With this project, I learned some notions of kubernetes, in particular K3d and K3s.
 - I learned how to use Vagrant to manage the lifecycle of virtual machines, and Vagrantfile to configure virtual machines.
 
 ## P1 : K3s and Vagrant
